@@ -1,0 +1,26 @@
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-md-8">
+            <table class="table" ng-show="pins.pins">
+                    <tr>
+                        <th>Action on output Pin</th>
+                        <th>PIN Name</th>
+                        <th>PIN State</th>
+                    </tr>
+            <tr ng-repeat="pin in pins.pins">
+                <td><pins-display state='pin.state'
+                                  pin-id="pin.id"
+                                  pin-name="pin.pinName"
+                                  update-state='updateState(state,id,name)'>
+
+                    </pins-display>
+                </td>
+                <td>{{pin.pinName}}</td>
+                <td>{{((pin.state === true)||(pin.state === 'true'))  && "Pin is set to High" || "Pin is set to Low"}}</td>
+            </tr>
+            </table>
+            <div ng-hide="pins.pins" >Could not load pins</div>
+            </div>
+        </div>
+    </div>
+</div>
