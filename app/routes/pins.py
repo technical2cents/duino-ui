@@ -34,7 +34,7 @@ def writePin():
 
 
     duino.pinMode(channel[int(entity.id)],duino.OUTPUT)
-    if entity.state = True :
+    if entity.state == True :
         duino.digitalWrite(channel[int(entity.id)],1)
     else :
         duino.digitalWrite(channel[int(entity.id)],0)
